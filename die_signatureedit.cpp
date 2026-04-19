@@ -113,7 +113,7 @@ void DIE_SignatureEdit::updateLineNumberAreaWidth(qint32 newBlockCount)
 {
     Q_UNUSED(newBlockCount)
 
-    setViewportMargins(lineNumberAreaWidth() + 5, 0, 0, 0);
+    setViewportMargins(lineNumberAreaWidth() + 12, 0, 0, 0);
 }
 
 void DIE_SignatureEdit::highlightCurrentLine()
