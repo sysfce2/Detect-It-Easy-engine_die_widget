@@ -113,7 +113,7 @@ void DialogDIEScanDirectory::scanDirectory(const QString &sDirectoryName)
 void DialogDIEScanDirectory::scanResult(const XScanEngine::SCAN_RESULT &scanResult)
 {
     // TODO
-    QString sResult = QString("%1 %2 %3").arg(QDir().toNativeSeparators(scanResult.sFileName), QString::number(scanResult.nScanTime), tr("msec"));
+    QString sResult = QString("%1 %2 %3").arg(QDir().toNativeSeparators(scanResult.sFileName)).arg(QString::number(scanResult.nScanTime)).arg(tr("msec"));
     sResult += "\r\n";
 
     ScanItemModel model(&m_scanOptions, &(scanResult.listRecords), 1, getGlobalOptions());

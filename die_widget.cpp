@@ -236,7 +236,7 @@ void DIE_Widget::onScanFinished()
     QString sLogButtonText;
 
     if (nNumberOfErrors) {
-        sLogButtonText = QString("%1(%2)").arg(tr("Log"), QString::number(nNumberOfErrors));
+        sLogButtonText = QString("%1(%2)").arg(tr("Log")).arg(QString::number(nNumberOfErrors));
     } else {
         sLogButtonText = tr("Log");
     }
@@ -333,7 +333,7 @@ void DIE_Widget::showInfo(const QString &sName)
             dialogInfo.exec();
         } else {
             QString _sName = QUrl::toPercentEncoding(sName);
-            QString sLink = QString("http://www.google.com/search?q=%1").arg(_sName);  // TODO Set Search Engine
+            QString sLink = QString("https://www.google.com/search?q=%1").arg(_sName);  // TODO Set Search Engine
             QDesktopServices::openUrl(QUrl(sLink));
         }
     }
@@ -453,7 +453,7 @@ void DIE_Widget::on_treeViewResult_customContextMenuRequested(const QPoint &pos)
             // TODO more
             QMenu contextMenu(this);  // TODO
 
-            QAction actionCopy(QString("%1 \"%2\"").arg(tr("Copy as"), sString), this);
+            QAction actionCopy(QString("%1 \"%2\"").arg(tr("Copy as")).arg(sString), this);
             connect(&actionCopy, SIGNAL(triggered()), this, SLOT(copyResult()));
 
             contextMenu.addAction(&actionCopy);
