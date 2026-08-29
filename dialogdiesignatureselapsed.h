@@ -31,30 +31,30 @@ class DialogDIESignaturesElapsed;
 class QAction;
 
 class DialogDIESignaturesElapsed : public XShortcutsDialog {
-  Q_OBJECT
+    Q_OBJECT
 
 public:
-  explicit DialogDIESignaturesElapsed(QWidget *pParent = nullptr);
-  ~DialogDIESignaturesElapsed() override;
+    explicit DialogDIESignaturesElapsed(QWidget *pParent = nullptr);
+    ~DialogDIESignaturesElapsed() override;
 
-  void adjustView() override;
+    void adjustView() override;
 
-  void setData(XScanEngine::SCAN_RESULT *pScanResult);
-  void setData(const XScanEngine::SCAN_RESULT &scanResult);
+    void setData(XScanEngine::SCAN_RESULT *pScanResult);
+    void setData(const XScanEngine::SCAN_RESULT &scanResult);
 
 private slots:
-  void on_pushButtonOK_clicked();
-  void copySelectedRows();
+    void on_pushButtonOK_clicked();
+    void copySelectedRows();
 
 protected:
-  void registerShortcuts(bool bState) override;
+    void registerShortcuts(bool bState) override;
 
 private:
-  void _setData(const XScanEngine::SCAN_RESULT *pScanResult);
-  void _updateCopyState();
+    void _setData(const XScanEngine::SCAN_RESULT *pScanResult);
+    void _updateCopyState();
 
-  Ui::DialogDIESignaturesElapsed *ui;
-  QAction *m_pActionCopy;
+    Ui::DialogDIESignaturesElapsed *ui;
+    QAction *m_pActionCopy;
 };
 
-#endif // DIALOGDIESIGNATURESELAPSED_H
+#endif  // DIALOGDIESIGNATURESELAPSED_H
