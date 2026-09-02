@@ -56,7 +56,7 @@ DialogDIESignaturesElapsed::DialogDIESignaturesElapsed(QWidget *pParent) : XShor
 
     connect(ui->pushButtonCopy, &QPushButton::clicked, this, &DialogDIESignaturesElapsed::copySelectedRows);
     connect(m_pActionCopy, &QAction::triggered, this, &DialogDIESignaturesElapsed::copySelectedRows);
-    connect(ui->tableWidgetResult->selectionModel(), &QItemSelectionModel::selectionChanged, this, [this]() { _updateCopyState(); });
+    connect(ui->tableWidgetResult->selectionModel(), &QItemSelectionModel::selectionChanged, this, &DialogDIESignaturesElapsed::_updateCopyState);
 
     ui->tableWidgetResult->setEnabled(false);
     ui->labelStatus->setText(tr("No timing data loaded."));
