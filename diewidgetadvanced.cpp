@@ -185,8 +185,11 @@ void DIEWidgetAdvanced::onSelectionChanged(const QItemSelection &itemSelected, c
         QString sSignatureName = listSelected.at(0).data(Qt::UserRole + ScanItemModel::UD_INFO).toString();
         QString sSignatureFileName = listSelected.at(0).data(Qt::UserRole + ScanItemModel::UD_INFO2).toString();  // TODO
 
-        QByteArray baData = XBinary::readFile(sSignatureFileName);
-        ui->plainTextEditSignature->setPlainText(baData);
+        // Group rows (file type / "Binary" headers) carry no signature file
+        if (!sSignatureFileName.isEmpty()) {
+            QByteArray baData = XBinary::readFile(sSignatureFileName);
+            ui->plainTextEditSignature->setPlainText(baData);
+        }
         ui->lineEditSignatureName->setText(sSignatureName);
     }
 }
